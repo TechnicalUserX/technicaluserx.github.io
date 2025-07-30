@@ -29,7 +29,7 @@ body::before {
 
 .container {
     text-align: center;
-    padding: 50px;
+    padding: 20px;
     position: relative; /* Ensure content stays above the overlay */
 }
 
