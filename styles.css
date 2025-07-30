@@ -1,0 +1,667 @@
+/* General body and container styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1a1a1a; /* Darker gray background */
+    background-image: url('background.png'); /* Set the circuit board background */
+    background-size: cover; /* Ensure the background covers the entire page */
+    background-position: center center; /* Center the background */
+    background-repeat: no-repeat; /* Prevent the background from repeating */
+    background-attachment: fixed; /* Make the background fixed to the screen */
+    color: white;
+    position: relative;
+    min-height: 100%; /* Ensure the body can grow based on content */
+    overflow-y: auto; /* Allow vertical scrolling */
+}
+
+/* Full-screen dim overlay */
+body::before {
+    content: '';
+    position: fixed; /* Use fixed positioning to keep it in place during scroll */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent black overlay */
+    z-index: -1; /* Ensure the overlay is behind the content */
+}
+
+.container {
+    text-align: center;
+    padding: 50px;
+    position: relative; /* Ensure content stays above the overlay */
+}
+
+/* Profile Section Styles */
+.profile-section {
+    margin-bottom: 20px;
+}
+
+.profile-container {
+    display: inline-block;
+}
+
+.profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid cyan; /* Cyan border around the image */
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+h1 {
+    margin-top: 20px;
+}
+
+/* Social Buttons Styles */
+.social-buttons {
+    margin-top: 20px;
+}
+
+.social-button {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #333;
+    color: cyan;
+    text-decoration: none;
+    border-radius: 25px;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.social-button:hover {
+    background-color: #444;
+    transform: scale(1.05);
+}
+
+.social-button i {
+    margin-right: 8px;
+}
+
+/* Separator line style */
+.separator {
+    border: none;
+    border-top: 3px solid cyan;
+    width: 80%;
+    margin: 30px auto;
+}
+
+
+/* Project Card Styles */
+.project-card {
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    margin: 20px auto;
+    width: 100%;
+    max-width: 1200px;
+    border: 3px solid darkgray;
+    border-radius: 10px;
+    background-color: #333;
+    padding: 20px;
+    color: white;
+    box-sizing: border-box; /* Ensure padding is included in the card size */
+    text-decoration: none; /* Remove underline from the link */
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.project-card:hover {
+    border: 3px solid #00ffff; /* Lighten the cyan border on hover */
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+/* Hover effect for the project card */
+.project-card:hover {
+    background-color: #444; /* Darken the background on hover */
+    transform: scale(1.05); /* Slightly enlarge the card */
+}
+
+/* Top Section (Image + Title + Description) */
+.project-card-top {
+    display: flex;
+    flex-direction: row; /* Align image and content horizontally */
+    width: 100%;
+    align-items: center; /* Vertically center content */
+}
+
+.project-card-left {
+    flex: 1; /* Let the image container take up flexible space */
+    max-width: 150px; /* Max width of the image container */
+    padding-right: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center the image vertically */
+}
+
+.project-img-container {
+    position: relative;
+    width: 100%; /* Ensure the image container takes up 100% of the available space */
+    height: 100%;
+    background-color: #222; /* Background color in case image is missing */
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto; /* Center the image container */
+}
+
+.project-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image fills the container without distortion */
+    border-radius: 10px;
+    border: 3px solid rgb(83, 83, 83); /* Smooth cyan border */
+    transition: border 0.3s ease; /* Smooth border transition */
+}
+
+.project-img:hover {
+    border: 3px solid #00ffff; /* Lighten the cyan border on hover */
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+/* Right side content (title and description) */
+.project-card-right {
+    flex: 3; /* Let the right side take up more space */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertically center title and description */
+    height: 150px; /* Same height as the image */
+}
+
+
+
+/* Description styling */
+.project-description {
+    font-size: 16px;
+    margin-bottom: 5px; /* Reduced margin */
+    color: white;
+}
+
+/* White separator between content and button */
+.card-separator {
+    border: none;
+    border-top: 1px solid white;
+    margin: 15px 0;
+}
+
+/* Bottom Section (Show Links button) */
+.project-card-bottom {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center button horizontally */
+}
+
+/* Button to show/hide links */
+.toggle-links-btn {
+    background-color: cyan;
+    color: black;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.toggle-links-btn:hover {
+    background-color: #00b0b0;
+}
+
+.project-links {
+    display: none;
+    margin-top: 10px;
+}
+
+.project-link {
+    color: cyan;
+    text-decoration: none;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.project-link:hover {
+    text-decoration: underline;
+}
+
+/* Transparent Background Area for Project Grid */
+.projects-background {
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
+    border-radius: 15px; /* Smooth rounded corners */
+    padding: 20px; /* Add padding around the grid */
+    border: 3px solid darkgray; /* Lighten the cyan border on hover */
+
+}
+
+.projects-background:hover {
+    border: 3px solid #00ffff; /* Lighten the cyan border on hover */
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+/* Responsive Grid Layout for Project Cards */
+.projects-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Auto-fit grid, minimum card width of 250px */
+    grid-gap: 50px;
+    padding: 0 20px;
+    justify-items: center; /* Center all grid items horizontally */
+    justify-content: center; /* Center grid container horizontally */
+}
+
+/* Large screens (tablets, laptops) */
+@media (min-width: 768px) {
+    .projects-section {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Cards adjust to 300px width */
+    }
+}
+
+/* Larger screens (desktops) */
+@media (min-width: 1024px) {
+    .projects-section {
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); /* Cards adjust to 350px width */
+    }
+}
+
+/* Extra large screens */
+@media (min-width: 1200px) {
+    .projects-section {
+        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); /* Cards adjust to 400px width */
+    }
+}
+
+/* Personal Info Section Styles */
+.personal-info {
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+
+/* Terminal Screen Styles */
+.terminal-screen {
+    padding-top: 10px;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
+    color: #00ff00; /* Green text color for terminal look */
+    font-family: 'Courier New', monospace; /* Monospace font for terminal look */
+    border-radius: 10px;
+    width: 100%; /* Ensure the terminal screen takes up full width */
+    max-width: 100%; /* Ensure it doesn't exceed the parent width */
+    overflow-x: auto; /* Allow horizontal scroll for long lines */
+    border: 3px solid darkgray; /* Lighten the cyan border on hover */
+    text-align: left; /* Ensure text is left-aligned */
+    padding-left: 10px;
+    box-sizing: border-box; /* Include padding and border in width calculation */
+}
+
+.terminal-screen:hover {
+    border: 3px solid #00ffff; /* Lighten the cyan border on hover */
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+/*-----*/
+
+
+.interests-backround {
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
+    border-radius: 15px; /* Smooth rounded corners */
+    padding: 20px; /* Add padding around the grid */
+    border: 3px solid darkgray; /* Lighten the cyan border on hover */
+
+}
+
+/*----------------------------------------------*/
+
+.airplanes-background {
+    background: linear-gradient(to bottom, #0099ff 75%, #008500 25%); /* Top 1/4 blue, bottom 3/4 green */
+    border-radius: 15px; /* Smooth rounded corners */
+    padding: 20px; /* Add padding around the grid */
+    border: 3px solid darkgray; /* Light gray border */
+    margin-bottom: 30px; /* Add margin to separate sections */
+    height:100px;
+}
+
+.airplanes-background:hover {
+    border: 3px solid #00ffff; /* Lighten the cyan border on hover */
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+/* Airplanes Section Inside the Background */
+.airplanes-section {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    align-items: flex-end; /* Ensure the ground stations are at the bottom */
+}
+
+.ground-station {
+    position: absolute;
+    bottom: 1%; /* Position at the bottom 25% of the green area */
+    font-size: 50px; /* Size of the satellite dish icons */
+    color: white; /* White color for the ground station */
+    transition: all 0.3s ease; /* Smooth transition for interactions */
+}
+/* Plane Styling */
+.airplane {
+    position: absolute;
+    bottom: 30%; /* Position the planes slightly above the green area */
+    font-size: 20px; /* Size of the plane icons */
+    color: white; /* Color for the plane icon */
+    animation: fly 10s linear infinite; /* Animate the planes from left to right */
+    z-index: 2;
+}
+
+/* Plane Animation (Left to Right) */
+@keyframes fly {
+    0% {
+        left: 0%; /* Start off-screen on the left (slightly outside the background) */
+        top: 0%;
+        display:block;
+    }
+    100% {
+        top: 0%;
+        left: 95%; /* Move off-screen to the right (slightly outside the background) */
+        display:block;
+    }
+}
+
+/* Add delay to make planes appear at different times */
+.airplane:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.airplane:nth-child(2) {
+    animation-delay: 3s; /* Add delay to second plane */
+}
+
+.airplane:nth-child(3) {
+    animation-delay: 7s; /* Add delay to third plane */
+}
+
+.wireless-icon {
+    position: absolute;
+    top: -20px; /* Position above the ground station */
+    right: -30px; /* Position to the right */
+    font-size: 25px; /* Size of the wireless icon */
+    color: #ffffff; /* Bright color to indicate connection */
+    opacity: 0; /* Initially hidden */
+    animation: blink 1s linear infinite; /* Animation to appear and disappear */
+    z-index: 3;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+/*-----------------------------*/
+
+/* ---------- container with smooth dark background ---------- */
+.enc2-background{
+    background-color: rgb(2, 0, 21); /* Semi-transparent black */
+    border-radius: 15px; /* Smooth rounded corners */
+    padding: 20px; /* Add padding around the grid */
+    border: 3px solid darkgray; /* Lighten the cyan border on hover */
+}
+
+.enc2-background:hover {
+    border: 3px solid #00ffff; /* Lighten the cyan border on hover */
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+.enc-title{
+    margin:0 0 25px;
+    font:700 24px/1.2 Arial,Helvetica,sans-serif;
+    color:#fff;
+    text-align:center;
+}
+
+/* ---------- main timeline ------------ */
+.enc2-diagram{
+    position:relative;
+    height:180px;
+}
+
+/* horizontal guide‑line */
+.enc2-diagram::before{
+    content:'';
+    position:absolute;
+    top:50%;
+    left:5%;
+    width:90%;
+    height:2px;
+    background:#555;
+}
+
+/* --- static nodes --- */
+.circle, .rect{
+    position:absolute;
+    top:50%;
+    transform:translate(-50%, -50%);
+    text-align:center;
+    font:16px 'Courier New',monospace;
+    color:#fff;
+}
+.circle{
+    width:80px;height:80px;
+    border-radius:50%;
+    border:3px solid gray;
+    display:flex;align-items:center;justify-content:center;
+    background:#222;
+    z-index: 2;
+}
+.rect{
+    width:90px;height:70px;
+    border-radius:10px;
+    border:3px solid gray;
+    background:#222;
+    display:flex;align-items:center;justify-content:center;
+    z-index: 2;
+}
+.sender  {left:5%;}
+.e       {left:30%;}
+.d       {left:70%;}
+.receiver{left:95%;}
+
+/* --- animated message square --- */
+.square{
+    position:absolute;
+    width:70px;height:70px;
+    border-radius:10px;
+    font:20px/70px 'Courier New',monospace;
+    text-align:center;
+    color:#000;
+}
+.msg{
+    top:calc(50% - 35px);          /* centred on the line */
+    background:#00ff00;            /* green = plaintext */
+    animation:msgMove 8s linear infinite;
+    box-shadow:0 0 6px #00ff00;
+}
+.label-x,.label-y{
+    position:absolute;
+    inset:0;
+}
+.label-y{opacity:0;}
+
+/* plaintext / ciphertext label swap */
+@keyframes labelSwapX{ 0%,24%,75%,100%{opacity:1;} 25%,74%{opacity:0;} }
+@keyframes labelSwapY{ 0%,24%,75%,100%{opacity:0;} 25%,74%{opacity:1;} }
+
+.msg .label-x{animation:labelSwapX 8s linear infinite;}
+.msg .label-y{animation:labelSwapY 8s linear infinite;}
+
+/* journey of the message */
+@keyframes msgMove{
+    0%   {left:5%;  background:#00ff00; box-shadow:0 0 6px #00ff00;}
+    25%  {left:30%; background:#ff8c00; box-shadow:0 0 6px #ff8c00;} /* enters e */
+    75%  {left:70%; background:#ff8c00; box-shadow:0 0 6px #ff8c00;} /* enters d */
+    100% {left:90%; background:#00ff00; box-shadow:0 0 6px #00ff00;}
+}
+
+/* --- animated key squares --- */
+.keyE,.keyD{
+    position:absolute;
+    width:60px;height:60px;
+    border-radius:10px;
+    background:#008cff;
+    color:#fff;
+    font:18px/60px 'Courier New',monospace;
+    text-align:center;
+    opacity:0;
+    z-index: 1;
+}
+.keyE{left:calc(30% - 30px); animation:keyDropE 8s linear infinite;}
+.keyD{left:calc(70% - 30px); animation:keyDropD 8s linear infinite;}
+
+/* key animations: drop from above into the rectangles */
+@keyframes keyDropE{
+    0%,10%  {top:-10px; opacity:0;}
+    15%     {top:-10px; opacity:1;}
+    20%     {top:calc(50% - 35px);}
+    41%     {top:calc(50% - 35px); opacity:0;}
+    100%    {top:calc(50% - 35px); opacity:0;}
+}
+@keyframes keyDropD{
+    0%,55%  {top:-10px; opacity:0;}
+    60%     {top:-10px; opacity:1;}
+    65%     {top:calc(50% - 35px);}
+    81%     {top:calc(50% - 35px); opacity:0;}
+    100%    {top:calc(50% - 35px); opacity:0;}
+}
+
+/*-------------------------*/
+
+/* =====  PCB background card  ===== */
+.pcb-background{
+    background:rgba(0,0,0,.7);
+    border:3px solid darkgray;
+    border-radius:15px;
+    margin:40px auto;
+    overflow:hidden;
+}
+
+.pcb-background:hover {
+    border: 3px solid #00ffff; /* Lighten the cyan border on hover */
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+/* =====  board area  ===== */
+.pcb-diagram{
+    position:relative;
+    height:200px;
+    background:#002b17;                 /* dark PCB green */
+    border-radius:15px;
+}
+
+/* MCU */
+.mcu{
+    position:absolute;
+    top:50%; left:50%; transform:translate(-50%,-50%);
+    width:80px;height:80px;
+    line-height:80px;
+    background:#1a1a1a;
+    border:3px solid lightgreen;
+    border-radius:10px;
+    color:lightgreen;font-weight:bold;text-align:center;
+    box-shadow:0 0 15px rgba(0,255,255,.5);
+    z-index: 2;
+}
+
+/* =====  traces  ===== */
+.trace{
+    position:absolute;
+    height:4px;                         /* horizontal segment */
+    width:4px;
+    background:lightgreen;
+    opacity:0.5;
+    animation:traceGlow 4s linear infinite;
+    z-index: 1;
+}
+.trace::after{                          /* vertical “via” segment */
+    position:absolute;
+    width:4px;background:lightgreen;
+    height:4px; background: lightgreen;
+    opacity:inherit;                    /* glow together */
+}
+@keyframes traceGlow{
+    0%,90% {opacity:0.5; box-shadow:none;}
+    10%,70%{opacity:1; box-shadow:0 0 8px lightgreen;}
+}
+
+/* individual routes */
+.trace1{top:13%; left:11%; width:26%;}
+.trace2{top:50%; left:37%; width:30%;}
+.trace3{top:85%; left:67%; width:22%;}
+.trace4{top:13%; left: 37%; height: 38%;}
+.trace5{top:50%; left:67%; height:36%;}
+
+.trace6{top:13%; left:50%; height:75%;}
+
+.trace7{top:13%; left:50%; width:22%;}
+.trace8{top:50%; left:11%; width:20%;}
+
+.trace9{top:50%; left:31%; height:36%;}
+
+.trace10{top:86%; left:31%; width:19%;}
+.trace11{top:50%; left:10.7%; height:36%;}
+.trace12{top:37%; left:50%; width:39%;}
+
+
+
+/* =====  LEDs  ===== */
+.led{
+    position:absolute;
+    width:15px;height:15px;border-radius:50%;
+    background:#111;box-shadow:none;
+    z-index: 2;
+}
+.led1{top:10%; left:10%;}
+.led2{top:10%; right:28%;}
+.led3{bottom:10%; left:10%;}
+.led4{bottom:10%; right:10%;}
+.led5{top:34%; right:10%;}
+
+/* blinking */
+.led.green{animation:blinkGreen 3s infinite;}
+.led.red  {animation:blinkRed   3s infinite;}
+
+@keyframes blinkGreen{
+    0%,75% {background:#111; box-shadow:none;}
+    76%,100%{background:lime; box-shadow:0 0 10px lime;}
+}
+@keyframes blinkRed{
+    0%,75% {background:#111; box-shadow:none;}
+    76%,100%{background:#ff4040; box-shadow:0 0 10px #ff4040;}
+}
+
+.quote-paragraph {
+    text-align: center;
+    font-size: 20px;
+    color: white;
+    font-style: italic;
+    margin: 20px auto;
+    max-width: 800px;
+    line-height: 1.5;
+    text-shadow: black;
+    border: 3px solid darkgray;
+    border-radius: 15px;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding:10px;
+}
+
+.footer-text {
+    text-align: center;
+    font-size: 14px;
+    color: #aaa;
+    margin: 20px 0;
+    font-family: Arial, sans-serif;
+}
