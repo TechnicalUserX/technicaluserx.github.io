@@ -282,7 +282,7 @@ h1 {
     padding-top: 10px;
     background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
     color: #00ff00; /* Green text color for terminal look */
-    font-family: 'Courier New', monospace; /* Monospace font for terminal look */
+    font-family: "Noto Sans Mono", "DejaVu Sans Mono", ui-monospace, Menlo, Consolas, "Liberation Mono", monospace;
     border-radius: 10px;
     width: 100%; /* Ensure the terminal screen takes up full width */
     max-width: 100%; /* Ensure it doesn't exceed the parent width */
@@ -291,6 +291,7 @@ h1 {
     text-align: left; /* Ensure text is left-aligned */
     padding-left: 10px;
     box-sizing: border-box; /* Include padding and border in width calculation */
+    white-space: pre;                 /* preserve spaces/newlines exactly */    
 }
 
 .terminal-screen:hover {
