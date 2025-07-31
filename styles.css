@@ -1,4 +1,9 @@
 /* General body and container styles */
+html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -277,8 +282,12 @@ h1 {
 }
 
 
-/* Terminal Screen Styles */
 .terminal-screen {
+    overflow-x: auto;
+}
+
+/* Terminal Screen Styles */
+.terminal-screen .terminal-art{
     padding-top: 10px;
     background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
     color: #00ff00; /* Green text color for terminal look */
@@ -291,7 +300,6 @@ h1 {
     text-align: left; /* Ensure text is left-aligned */
     padding-left: 10px;
     box-sizing: border-box; /* Include padding and border in width calculation */
-    white-space: pre;                 /* preserve spaces/newlines exactly */    
 }
 
 .terminal-screen:hover {
