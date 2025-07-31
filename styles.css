@@ -309,6 +309,19 @@ h1 {
 
 }
 
+.terminal-screen,
+.terminal-screen pre {                /* keep both covered */
+    font-family: 'Noto Sans Mono',    /* web-font first  */
+                 'IBM Plex Mono',
+                 'DejaVu Sans Mono',  /* desktop fallbacks */
+                 monospace;
+    white-space: pre;                 /* just in case a reset overrides <pre> */
+}
+
+@media (max-width: 600px) {
+    .terminal-screen pre { font-size: 12px; }  /* tune to taste */
+}
+
 /*----------------------------------------------*/
 
 .airplanes-background {
