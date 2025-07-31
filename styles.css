@@ -1,9 +1,4 @@
 /* General body and container styles */
-html {
-    -webkit-text-size-adjust: 100%;
-    text-size-adjust: 100%;
-}
-
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -282,16 +277,12 @@ h1 {
 }
 
 
-.terminal-screen {
-    overflow-x: auto;
-}
-
 /* Terminal Screen Styles */
-.terminal-screen .terminal-art{
+.terminal-screen {
     padding-top: 10px;
     background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
     color: #00ff00; /* Green text color for terminal look */
-    font-family: "Noto Sans Mono", "DejaVu Sans Mono", ui-monospace, Menlo, Consolas, "Liberation Mono", monospace;
+    font-family: 'Courier New', monospace; /* Monospace font for terminal look */
     border-radius: 10px;
     width: 100%; /* Ensure the terminal screen takes up full width */
     max-width: 100%; /* Ensure it doesn't exceed the parent width */
